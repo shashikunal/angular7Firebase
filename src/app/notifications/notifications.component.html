@@ -1,0 +1,9 @@
+<div class="container" [hidden]="type === null">
+  <div class="row">
+    <div class="alert col-md-12  text-center"  
+    [ngClass]="{'alert-success': type === 'success' , 'alert-danger' : type ==='error'}">
+  
+      {{message}}
+    
+  </div>
+</div>

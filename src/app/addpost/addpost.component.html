@@ -1,0 +1,30 @@
+<div class="container mt-4  p-2 col-md-6 offset-3">
+  <h1 class="h1 mt-4">Add Photos</h1>
+    <div class="input-group">
+        <div class="custom-file">
+            <input type="file" 
+            (change)="onFileSelection($event)"
+            class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"
+            accept=".png, .jpeg, .jpg"
+            >
+            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+          </div>
+        <div class="input-group-prepend">
+          <span class="input-group-text btn btn-success" id="inputGroupFileAddon01">Upload</span>
+        </div>
+       
+      </div> <!----upload-->
+     
+</div>
+<div class="container mt-2">
+  <div class="col-md-12">
+    <div class="image-container">
+      <app-post *ngFor="let post of postLists"
+                 [imageName]="post.data.name"
+                 [displayPostedBy]="false"
+      >
+
+      </app-post>
+    </div>
+  </div>
+</div>

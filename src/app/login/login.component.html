@@ -1,0 +1,25 @@
+<div class="col-md-4 offset-4 mt-4">
+    <h1 class=" h1  mt-4 font-weight-bold text-center text-uppercase p-3"  >Login</h1>
+  <form #f='ngForm' (ngSubmit)="submit(f)">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" required minlength="5" name="username" class="form-control" ngModel #username="ngModel">
+      <div class="alert alert-danger alert-dismissible mt-2" *ngIf="username.touched && username.invalid">
+        <p *ngIf="username.errors.required">This field is Required</p>
+        <p *ngIf="username.errors.minlength">It Should be minimum 5 characters</p>
+      
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
+      ngModel #password="ngModel"
+       required 
+      />
+      </div>
+    <div class="form-group">
+      <button class="btn btn-primary float-right" [disabled]="f.invalid">Submit</button>
+    </div>
+
+  </form>
+</div>
